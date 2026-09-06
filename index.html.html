@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 6th Monthsary💕</title>
+
+  <!-- Google Fonts for Romantic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #1a080c;
+      color: #f3e5e8;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Lock Screen Passcode Overlay */
+    .passcode-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, #4a1222 0%, #1a080c 80%);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .passcode-box {
+      background: rgba(45, 15, 24, 0.8);
+      border: 1px solid rgba(248, 195, 205, 0.3);
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(15px);
+      max-width: 400px;
+      width: 100%;
+      animation: floatSlow 4s infinite ease-in-out;
+    }
+
+    .passcode-box h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #f8c3cd;
+      margin-bottom: 10px;
+    }
+
+    .passcode-box p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: #e2b0bc;
+      margin-bottom: 25px;
+    }
+
+    .passcode-input {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.3rem;
+      text-align: center;
+      letter-spacing: 5px;
+      border-radius: 50px;
+      border: 1px solid rgba(248, 195, 205, 0.4);
+      background: rgba(26, 8, 12, 0.6);
+      color: #fff;
+      outline: none;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .passcode-input:focus {
+      border-color: #d44161;
+      box-shadow: 0 0 15px rgba(212, 65, 97, 0.5);
+    }
+
+    .passcode-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #d44161 0%, #a22a45 100%);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(212, 65, 97, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .passcode-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(212, 65, 97, 0.7);
+    }
+
+    .error-msg {
+      color: #ff6b6b;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      display: none;
+    }
+
+    /* Shake Animation for Wrong Passcode */
+    .shake {
+      animation: shake 0.4s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-10px); }
+      40%, 80% { transform: translateX(10px); }
+    }
+
+    /* Floating Hearts Background Animation */
+    .bg-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .heart-particle {
+      position: absolute;
+      bottom: -10%;
+      color: rgba(230, 87, 122, 0.25);
+      font-size: 20px;
+      animation: floatUp 12s infinite linear;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at center, #4a1222 0%, #1a080c 70%);
+      padding: 40px 20px;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      animation: floatSlow 5s infinite ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 5rem;
+      color: #f8c3cd;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(248, 195, 205, 0.4), 2px 2px 4px rgba(0,0,0,0.8);
+      font-weight: normal;
+      animation: glowTitle 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes glowTitle {
+      0% { text-shadow: 0 0 15px rgba(248, 195, 205, 0.4); }
+      100% { text-shadow: 0 0 35px rgba(248, 195, 205, 0.9), 0 0 10px #d44161; }
+    }
+
+    .hero p.subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      color: #e2b0bc;
+      margin-bottom: 35px;
+      letter-spacing: 1px;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, #d44161 0%, #a22a45 100%);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 16px 38px;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(212, 65, 97, 0.5);
+      transition: all 0.4s ease;
+      font-weight: 500;
+      animation: pulseBtn 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseBtn {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(212, 65, 97, 0.5); }
+      50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(212, 65, 97, 0.8); }
+    }
+
+    /* Floating Music Toggle Button */
+    .music-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999;
+      background: rgba(212, 65, 97, 0.8);
+      border: 1px solid rgba(248, 195, 205, 0.5);
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(212, 65, 97, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.1);
+      background: #d44161;
+      box-shadow: 0 0 25px rgba(212, 65, 97, 0.8);
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 100px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.8rem;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #f8c3cd;
+      text-shadow: 0 0 15px rgba(248, 195, 205, 0.3);
+      font-weight: normal;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .photo-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(248, 195, 205, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease;
+      animation: floatSlow 6s infinite ease-in-out;
+    }
+
+    .photo-card:nth-child(even) {
+      animation-delay: 2s;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(248, 195, 205, 0.5);
+      box-shadow: 0 20px 40px rgba(212, 65, 97, 0.35);
+    }
+
+    .photo-container {
+      position: relative;
+      width: 100%;
+      height: 380px;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9) contrast(1.05);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+
+    .photo-card:hover img {
+      filter: brightness(1) contrast(1.1);
+      transform: scale(1.05);
+    }
+
+    .photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(26, 8, 12, 0.95) 0%, rgba(26, 8, 12, 0.6) 60%, transparent 100%);
+      color: #fff;
+      padding: 35px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      font-style: italic;
+      color: #f8c3cd;
+      text-align: center;
+    }
+
+    .like-btn {
+      background: rgba(212, 65, 97, 0.2);
+      border: 1px solid rgba(248, 195, 205, 0.4);
+      color: #f8c3cd;
+      padding: 8px 22px;
+      border-radius: 25px;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+
+    .like-btn:hover {
+      background: rgba(212, 65, 97, 0.5);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(212, 65, 97, 0.5);
+    }
+
+    .like-btn.liked {
+      background: #d44161;
+      border-color: #d44161;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(212, 65, 97, 0.6);
+    }
+
+    /* Message Section */
+    .message-section {
+      padding: 50px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .message-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(45, 15, 24, 0.6);
+      border: 1px solid rgba(248, 195, 205, 0.2);
+      padding: 50px 40px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(212, 65, 97, 0.1);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      position: relative;
+      animation: floatSlow 7s infinite ease-in-out;
+    }
+
+    .message-card::before {
+      content: '“';
+      font-family: 'Great Vibes', cursive;
+      font-size: 10rem;
+      position: absolute;
+      top: -40px;
+      left: 20px;
+      color: rgba(248, 195, 205, 0.08);
+      pointer-events: none;
+    }
+
+    .message-title {
+      font-family: 'Great Vibes', cursive;
+      color: #f8c3cd;
+      font-size: 3.5rem;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+
+    .message-text, .message-signature {
+      font-family: 'Cormorant Garamond', serif;
+      margin-bottom: 22px;
+      font-size: 1.35rem;
+      color: #e2b0bc;
+      line-height: 1.9;
+      font-weight: 400;
+    }
+
+    .message-signature {
+      font-style: italic;
+    }
+
+    .message-hearts {
+      font-size: 2.2rem;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .heart-animation {
+      display: inline-block;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    .heart-animation:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .heart-animation:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    /* Interactive Reveal Boxes Section */
+    .extra-section {
+      padding: 50px 20px 100px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .extra-box {
+      background: rgba(45, 15, 24, 0.6);
+      border: 1px solid rgba(248, 195, 205, 0.2);
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      animation: floatSlow 5s infinite ease-in-out;
+    }
+
+    .extra-box.large-box {
+      grid-column: 1 / -1;
+      padding: 50px 40px;
+      border-radius: 24px;
+      background: rgba(45, 15, 24, 0.7);
+    }
+
+    .extra-box.large-box h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    .extra-box.large-box .secret-content {
+      font-size: 1.35rem;
+      line-height: 1.9;
+    }
+
+    .voice-player {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 30px;
+      outline: none;
+    }
+
+    /* Inner Pet Grid Inside Reveal Box */
+    .pet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .pet-photo-card {
+      background: rgba(26, 8, 12, 0.6);
+      border: 1px solid rgba(248, 195, 205, 0.2);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .pet-photo-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .pet-photo-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .pet-photo-caption {
+      padding: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: #f8c3cd;
+      text-align: center;
+    }
+
+    .extra-box:nth-child(even) {
+      animation-delay: 1.5s;
+    }
+
+    .extra-box:nth-child(3n) {
+      animation-delay: 3s;
+    }
+
+    .extra-box:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(248, 195, 205, 0.5);
+      box-shadow: 0 15px 35px rgba(212, 65, 97, 0.3);
+    }
+
+    .extra-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+      animation: spinGentle 6s infinite ease-in-out;
+    }
+
+    @keyframes spinGentle {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(12deg) scale(1.1); }
+    }
+
+    .extra-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: #f8c3cd;
+      margin-bottom: 10px;
+    }
+
+    .click-hint {
+      font-size: 0.85rem;
+      color: #d44161;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      margin-top: 15px;
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(212, 65, 97, 0.15);
+      border-radius: 20px;
+      border: 1px solid rgba(212, 65, 97, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .extra-box:hover .click-hint {
+      background: #d44161;
+      color: #fff;
+    }
+
+    .secret-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      margin-top: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: #f3e5e8;
+      line-height: 1.7;
+    }
+
+    .extra-box.active {
+      border-color: #f8c3cd;
+      background: rgba(65, 20, 35, 0.8);
+      box-shadow: 0 0 30px rgba(248, 195, 205, 0.3);
+    }
+
+    .extra-box.active .secret-content {
+      max-height: 1200px;
+      opacity: 1;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px dashed rgba(248, 195, 205, 0.2);
+    }
+
+    .extra-box.active .click-hint {
+      background: rgba(255, 255, 255, 0.1);
+      color: #e2b0bc;
+      border-color: transparent;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); filter: drop-shadow(0 0 10px #d44161); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3.5rem; }
+      .hero p.subtitle { font-size: 1.3rem; }
+      .section-title { font-size: 2.8rem; }
+      .message-card, .extra-box.large-box { padding: 30px 20px; }
+      .extra-box.large-box h3 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music Element -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.imageurlgenerator.com/uploads/fa12b3f8-0792-4133-b60f-7ffbfe1b2276.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Music Toggle Button -->
+  <button class="music-btn" id="musicToggleBtn" onclick="toggleMusic()">🎵</button>
+
+  <!-- Passcode Protection Lock Screen -->
+  <div class="passcode-overlay" id="passcodeOverlay">
+    <div class="passcode-box" id="passcodeBox">
+      <h2>For My Love 🔒</h2>
+      <p>Enter our special secret code to open:</p>
+      <input type="password" class="passcode-input" id="passcodeInput" placeholder="****" maxlength="10">
+      <button class="passcode-btn" onclick="checkPasscode()">Unlock Surprise 💖</button>
+      <div class="error-msg" id="errorMsg">Incorrect Passcode! Try again 💕</div>
+    </div>
+  </div>
+
+  <!-- Floating Hearts Background -->
+  <div class="bg-hearts" id="bgHearts"></div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 class="typewriter" id="typewriter">Happy 6th monthsary , Beautiful! 💕</h1>
+      <p class="subtitle fade-in-today">
+        Happy monthsary baby/asawa/dragon/shark/dinosaur happy 6th monthsary lovey 
+      </p>
+      <button class="cta-button" onclick="scrollToSection('gallery')">
+        Happy 6th Monthsary Lovey - Precious 🌹
+      </button>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <h2 class="section-title"> my wife 💕</h2>
+      <div class="gallery-grid">
+        <!-- Photo Card 1 -->
+        <div class="photo-card">
+          <div class="photo-container">
+            <img src="https://i.ibb.co/35Hjnn0H/jpg.jpg" alt="Beautiful Moment">
+            <div class="photo-overlay">
+              <div class="photo-caption">My wife </div>
+              <button class="like-btn" onclick="toggleLike(this)">
+                <span class="heart-icon">❤️</span> <span>Like</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 2 -->
+        <div class="photo-card">
+          <div class="photo-container">
+            <img src="https://i.ibb.co/LWYfqCq/jpg.jpg" alt="Happy Times">
+            <div class="photo-overlay">
+              <div class="photo-caption">your husband na kupal </div>
+              <button class="like-btn" onclick="toggleLike(this)">
+                <span class="heart-icon">❤️</span> <span>Like</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 3 -->
+        <div class="photo-card">
+          <div class="photo-container">
+            <img src="https://i.ibb.co/zHfgfZX3/jpg.jpg" alt="Sweet Smile">
+            <div class="photo-overlay">
+              <div class="photo-caption">and our baby oreo </div>
+              <button class="like-btn" onclick="toggleLike(this)">
+                <span class="heart-icon">❤️</span> <span>Like</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 4 -->
+        <div class="photo-card">
+          <div class="photo-container">
+            <img src="https://i.ibb.co/DHgq5XrQ/jpg.jpg" alt="Pure Joy">
+            <div class="photo-overlay">
+              <div class="photo-caption">My heart belongs to you</div>
+              <button class="like-btn" onclick="toggleLike(this)">
+                <span class="heart-icon">❤️</span> <span>Like</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 5 -->
+        <div class="photo-card">
+          <div class="photo-container">
+            <img src="https://i.ibb.co/W4YMZr2M/jpg.jpg" alt="Special Memory">
+            <div class="photo-overlay">
+              <div class="photo-caption">Creating memories together</div>
+              <button class="like-btn" onclick="toggleLike(this)">
+                <span class="heart-icon">❤️</span> <span>Like</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card 6 -->
+        <div class="photo-card">
+          <div class="photo-container">
+            <img src="https://i.ibb.co/7JMK1CSz/jpg.jpg" alt="Romantic Moment">
+            <div class="photo-overlay">
+              <div class="photo-caption">Forever and always</div>
+              <button class="like-btn" onclick="toggleLike(this)">
+                <span class="heart-icon">❤️</span> <span>Like</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Pet Gallery Box Section (PLACED FIRST) -->
+  <section class="extra-section" style="padding-bottom: 20px;">
+    <div class="container">
+      <div class="extra-grid">
+        <div class="extra-box large-box" onclick="toggleBox(this)">
+          <div class="extra-icon">🐾</div>
+          <h3>Our Baby OREO</h3>
+          <div class="click-hint">Click to view pet pictures 🐾💖</div>
+          <div class="secret-content">
+            <p>Our most handsome baby, our one and only Baby Oreo.💕</p>
+            <div class="pet-grid">
+              <div class="pet-photo-card">
+                <img src="https://i.ibb.co/FbJt8qNv/jpg.jpg" alt="Baby Pet 1">
+                <div class="pet-photo-caption">Cutest pose 💕</div>
+              </div>
+              <div class="pet-photo-card">
+                <img src="https://i.ibb.co/mdtzYVN/jpg.jpg" alt="Baby Pet 2">
+                <div class="pet-photo-caption">Sleepy baby 😴✨</div>
+              </div>
+              <div class="pet-photo-card">
+                <img src="https://i.ibb.co/xKFhSZPG/JPG.jpg" alt="Baby Pet 3">
+                <div class="pet-photo-caption">Tired ang ferson🐾🎉</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Message Section (PLACED SECOND) -->
+  <section class="message-section" id="message">
+    <div class="container">
+      <div class="message-card">
+        <h2 class="message-title">A Special Message for You</h2>
+        <p class="message-text">
+          Happy 6th monthsary, lovey. I know mahirap at madami tayong napagdaan sa buwan na 'to, but nandito pa rin tayo. Kahit sobrang complicated and nahihirapan intindihin ang isa't isa, buti na lang nandyan ka pa rin at willing maghintay kung kailan kita mapapatawad. Oo nga naman, hindi mo matatawag ang love kung sa love na 'yun hindi mo ibibigay ang lahat para sa isang taong mahal mo, right?
+        <p class="message-signature">
+          I love you so much, babyy. I know mahirap sa sitwasyon mo yung nangyayari sa 'atin and para sakin din, but I hope walang iwanan hanggang dulo na 'to, babyyyyyyyyy. Magmamahalan tayo hanggang sa gusto natin. Never akong susuko and never kitang iiwan, love love. Hindi ko na kailangan pa maghanap ng iba para lang sa ikakaligaya ko or anything; gusto ko 'tong ipaglaban tong RS natin kung saan pa man mapunta to prove na mahal na mahal kita. Gagawin ko lahat.
+        </p>
+        <p class="message-signature">
+          I know sobrang dami kong nagawang mali, but nandyan ka pa rin, kaya mo akong patawarin at tanggapin lahat ng explanation ko, lovey. Again, baby, happy 6th monthsary, babyy. I hope you stay forever and ever. Kahit ano pang problema na dumating sa 'atin, tatanggapin at haharapin ko at natin.
+        </p>
+        <div class="message-hearts">
+          <span class="heart-animation">💖</span>
+          <span class="heart-animation">💗</span>
+          <span class="heart-animation">💓</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Remaining Interactive Reveal Boxes Section -->
+  <section class="extra-section">
+    <div class="container">
+      <div class="extra-grid">
+
+        <!-- Box 1 -->
+        <div class="extra-box" onclick="toggleBox(this)">
+          <div class="extra-icon">💕</div>
+          <h3>Reasons I Love You</h3>
+          <div class="click-hint">Click to open 💖</div>
+          <div class="secret-content">
+            You make me smile without even trying. You listen to me when I need someone the most. You remember the little things I say. You make ordinary moments feel special. Your laugh makes everything better. You believe in me kahit nagda-doubt ako sa sarili ko. You make me feel safe. You care deeply about people. Naiintindihan mo ako without needing explanations. You accept me completely. You encourage me to grow. You make me feel appreciated. You calm me down kapag overwhelmed ako. You inspire me every single day. Your Presence feel i'm okay. You make difficult days so much easier. You stay patient with me. You support my dreams. You respect my feelings. You make me feel important You are thoughtful in small ways. You always check on me. You make silence feel comfortable. You respect my boundaries. You are honest with me. You forgive my mistakes. You never stop trying. You make me feel understood..
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="extra-box" onclick="toggleBox(this)">
+          <div class="extra-icon">🚀</div>
+          <h3>Our Future Together</h3>
+          <div class="click-hint">Click to open 💖</div>
+          <div class="secret-content">
+            I'm so excited to be with you, and I know na medyo matagal tagal pa siguro 'yun mangyayari. But I know we'll meet maybe not now, but soon. As long as the sun shines, aasa pa rin akong magkikita tayo. Once we finally meet, ibibigay ko sa'yo lahat ng kahilingan mo at sasabayan kita sa kahit anong trip mo sa buhay. Kung saan mo gustong gumala, sasamahan kita. Kung saan mo gustong kumain, dadalhin kita. Anything you want, ibibigay ko sa'yo lahat lahat. If you want to watch a movie, go ako! I just want to make the most out of every single day and hour na kasama kita, lovey.".
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="extra-box" onclick="toggleBox(this)">
+          <div class="extra-icon">💌</div>
+          <h3>My Promise To You</h3>
+          <div class="click-hint">Click to open 💖</div>
+          <div class="secret-content">
+            "I promise you, I'll never look for anyone else at hindi kita iiwan, no matter what happens in our lives and in our relationship. Kahit ano pang problem ang dumating sa ating dalawa, I will stay and stay pa rin sa rs natin. Ayaw kitang mawala sa buhay, because I know, and you know, kung gaano natin kamahal ang isa't isa, kahit...".
+          </div>
+        </div>
+
+        <!-- Large Feature Box 1: VOICE MESSAGE AUDIO PLAYER -->
+        <div class="extra-box large-box" onclick="toggleBox(this)">
+          <div class="extra-icon">🎙️</div>
+          <h3>Listen To My Voice Message</h3>
+          <div class="click-hint">Click to listen 🎧</div>
+          <div class="secret-content">
+            <p>I recorded a little message just for you, baby. Put on your earphones and press play 💕</p>
+            <audio controls class="voice-player" onclick="event.stopPropagation(); pauseAutoScrollTemporarily(15000);">
+              <source src="https://cdn.imageurlgenerator.com/uploads/2ed13024-62aa-48d2-ac16-ebb2aa9266e8.m4a" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+        <!-- Large Feature Box 2: VOICE MESSAGE LETTER -->
+        <div class="extra-box large-box" onclick="toggleBox(this)">
+          <div class="extra-icon">📝</div>
+          <h3>My Voice Message Letter</h3>
+          <div class="click-hint">Click to read letter 💖</div>
+          <div class="secret-content">
+            <p><em>Hi my love / baby / asawa / dragon / shark / dinosaur,</em></p>
+            <br>
+            <p>hello love happy 6th monthsary saating dalawa just a simple message and short message to our monthsary,and for the one and only person that i love the most, i just to say Thankyou For everything And Thankyou For the Love,and trush me ,i know i'm not a perfect boyfriend for you, </p>
+            <br>
+            <p>and sometimes we don't understand each other, but im always here for you love no matter whats happend no monthsary greetings and messages can define,sana baby wag ka mag sawa saken ah sana wag mukong lukohin yon lang just a simple message to our rs sana forever and ever na tayong dalawa and wala nanghiwalayang mangyari satin mwaaaa mwaaa mwaaa again happy and happy monthsary sating dalawaaaaa i love youu soo muchhhhhhhhhhhhhh</p>
+            <br>
+            <p>I love you endlessly, my lovey. Happy 6th Monthsary! 💕</p>
+          </div>
+        </div>
+        </div>
+
+
+        <!-- Large Feature Box 3 -->
+        <div class="extra-box large-box" onclick="toggleBox(this)">
+          <div class="extra-icon">🌹</div>
+          <h3>Why You Mean The World To Me</h3>
+          <div class="click-hint">Click to open big surprise 💖</div>
+          <div class="secret-content">
+            Every day with you feels like a blessing. From the smallest random conversations to our biggest moments together, you have made my world infinitely brighter, warmer, and full of love. Thank you for being my anchor and my happiest place.
+          </div>
+        </div>
+
+      
+        <!-- Box 4 -->
+        <div class="extra-box" onclick="toggleBox(this)">
+          <div class="extra-icon"></div>
+          <h3>Reasons You Make Me Smile</h3>
+          <div class="click-hint">Click to open 💖</div>
+          <div class="secret-content">
+            The adorable faces you make, your silly giggles, and how excited you get over small things!
+          </div>
+        </div>
+
+        <!-- Box 6 -->
+        <div class="extra-box" onclick="toggleBox(this)">
+          <div class="extra-icon"></div>
+          <h3>Your Cute Nicknames</h3>
+          <div class="click-hint">Click to open 💖</div>
+          <div class="secret-content">
+            My baby, asawa, dragon, shark, dinosaur, lovey... you are all my favorites in one! 💕
+          </div>
+        </div>
+
+        <!-- Large Feature Box 4 -->
+        <div class="extra-box large-box" onclick="toggleBox(this)">
+          <div class="extra-icon">♾️</div>
+          <h3>To Many More Monthsaries</h3>
+          <div class="click-hint">Click to open big surprise 💖</div>
+          <div class="secret-content">
+            6 months down, and a lifetime to go! I can't wait for all the adventures, laughs, and memories we have yet to create. Happy 6th Monthsary my love!
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // PASSCODE CONFIGURATION
+    const SECRET_PASSCODE = "51019";
+    let autoScrollInterval = null;
+    let isUserInteracting = false;
+    let pauseTimeout = null;
+
+    // Music Player Setup
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicToggleBtn');
+
+    // Automatically trigger slow scrolling as soon as music starts playing
+    music.addEventListener('play', () => {
+      startSlowAutoScroll();
+    });
+
+    // Pause slow scrolling if music is paused
+    music.addEventListener('pause', () => {
+      stopSlowAutoScroll();
+    });
+
+    function checkPasscode() {
+      const inputVal = document.getElementById('passcodeInput').value;
+      const overlay = document.getElementById('passcodeOverlay');
+      const box = document.getElementById('passcodeBox');
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (inputVal === SECRET_PASSCODE) {
+        overlay.style.opacity = '0';
+        
+        // Playing music triggers 'play' event which starts slow auto-scroll automatically
+        music.play().catch(e => console.log("Audio playback error:", e));
+
+        setTimeout(() => {
+          overlay.style.visibility = 'hidden';
+        }, 800);
+      } else {
+        errorMsg.style.display = 'block';
+        box.classList.add('shake');
+        setTimeout(() => {
+          box.classList.remove('shake');
+        }, 400);
+      }
+    }
+
+    // Toggle Music Play / Pause
+    function toggleMusic() {
+      pauseAutoScrollTemporarily(15000);
+      if (music.paused) {
+        music.play();
+        musicBtn.textContent = '🎵';
+      } else {
+        music.pause();
+        musicBtn.textContent = '🔇';
+      }
+    }
+
+    // SLOW AUTO SCROLL LOGIC
+    function startSlowAutoScroll() {
+      if (autoScrollInterval) clearInterval(autoScrollInterval);
+
+      autoScrollInterval = setInterval(() => {
+        if (!isUserInteracting && !music.paused) {
+          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            window.scrollBy({ top: 1, behavior: 'auto' });
+          }
+        }
+      }, 40);
+    }
+
+    function stopSlowAutoScroll() {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
+      }
+    }
+
+    // Pause auto-scroll on interaction for 15 seconds (15,000 ms) before resuming slow-mo
+    function pauseAutoScrollTemporarily(durationInMs = 15000) {
+      isUserInteracting = true; // Stop auto-scroll immediately
+      
+      if (pauseTimeout) clearTimeout(pauseTimeout); // Reset 15-second timer
+      
+      // Return back to auto slow-mo scroll after 15 seconds
+      pauseTimeout = setTimeout(() => {
+        isUserInteracting = false;
+      }, durationInMs);
+    }
+
+    // Automatically trigger 15-second pause when screen is clicked, touched, or interacted with
+    window.addEventListener('click', (e) => {
+      // Don't trigger if click is inside passcode screen before unlocking
+      if (document.getElementById('passcodeOverlay').style.visibility === 'hidden') {
+        pauseAutoScrollTemporarily(15000);
+      }
+    });
+
+    window.addEventListener('touchstart', () => {
+      if (document.getElementById('passcodeOverlay').style.visibility === 'hidden') {
+        pauseAutoScrollTemporarily(15000);
+      }
+    });
+
+    // Allow pressing "Enter" key on passcode input
+    document.getElementById('passcodeInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        checkPasscode();
+      }
+    });
+
+    // Floating hearts background setup
+    const bgHearts = document.getElementById('bgHearts');
+    const heartSymbols = ['💖', '💗', '❤️', '💕', '✨'];
+
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart-particle');
+      heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 10 + 's';
+      heart.style.animationDuration = (8 + Math.random() * 8) + 's';
+      heart.style.fontSize = (14 + Math.random() * 16) + 'px';
+      bgHearts.appendChild(heart);
+    }
+
+    // Smooth scroll function
+    function scrollToSection(id) {
+      pauseAutoScrollTemporarily(15000);
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Toggle Like button status
+    function toggleLike(btn) {
+      pauseAutoScrollTemporarily(15000);
+      btn.classList.toggle('liked');
+      const textSpan = btn.querySelector('span:last-child');
+      if (btn.classList.contains('liked')) {
+        textSpan.textContent = 'Liked!';
+      } else {
+        textSpan.textContent = 'Like';
+      }
+    }
+
+    // Toggle Secret Box Reveal Function
+    function toggleBox(card) {
+      pauseAutoScrollTemporarily(15000); // Pauses auto-scroll for 15 seconds
+      card.classList.toggle('active');
+      const hint = card.querySelector('.click-hint');
+      if (card.classList.contains('active')) {
+        hint.textContent = 'Click to hide ✨';
+      } else {
+        hint.textContent = 'Click to open 💖';
+      }
+    }
+  </script>
+</body>
+</html>
